@@ -1,0 +1,38 @@
+// src/components/NavBar/NavBar.scss
+@use '../../styles/variables' as vars;
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: vars.$primary-color;
+    display: flex;
+    align-items: center;
+    z-index: 999;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.nav-container {
+    width: 85%;
+    margin: 0 auto;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-button {
+    background: transparent;
+    color: vars.$text-color;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+
+    &:hover {
+        background-color: vars.$accent-color;
+        color: vars.$background-color;
+        border-radius: 4px;
+    }
+}
