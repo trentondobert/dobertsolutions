@@ -1,0 +1,91 @@
+@use '../../styles/variables' as vars;
+
+.home-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch; 
+    gap: 2rem;
+    padding: 2rem 0;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.left-panel {
+    flex: 1;
+    padding: 1rem;
+    background-color: vars.$secondary-color;
+    color: vars.$text-color;
+    border-radius: 1rem;
+    box-shadow: vars.$box-shadow-default;
+}
+
+.right-panel {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color: vars.$secondary-color;
+    border-radius: 1rem;
+    box-shadow: vars.$box-shadow-default;
+
+    .profile-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+
+        .profile-img {
+            max-width: 500px;
+            border-radius: 50%;
+            border: 3px solid vars.$accent-color;
+            object-fit: cover;
+        }
+
+        .contact-info {
+            text-align: left;
+            font-size: 1rem;
+            color: vars.$text-color;
+
+            a {
+                color: vars.$accent-color;
+                text-decoration: none;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            p {
+                margin: 0.25rem 0;
+            }
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            color: vars.$text-color;
+            text-decoration: none;
+            transition: all 0.3s ease;
+
+            svg {
+                margin-right: 0.5rem;
+                color: vars.$accent-color;
+                transition: color 0.3s ease;
+            }
+
+            &:hover {
+                color: vars.$primary-color;
+
+                svg {
+                    color: vars.$primary-color;
+                }
+
+                text-decoration: underline;
+            }
+        }
+    }
+}

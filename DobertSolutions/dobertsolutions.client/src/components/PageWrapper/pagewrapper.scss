@@ -1,0 +1,23 @@
+@use '../../styles/variables' as vars;
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: vars.$background-color;
+    color: vars.$text-color;
+    width: 100vw;
+}
+
+.page-content {
+    flex: 1;
+    padding: 2rem;
+    padding-top: 6rem; // for nav bar
+}
+
+.page-footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: rgba(vars.$primary-color, 0.08);
+    font-size: 0.9rem;
+}
