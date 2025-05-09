@@ -27,8 +27,8 @@ const Home = () => {
                         <img src="/assets/TrentonDobertPic.jpg" alt="Trenton Picture" className="profile-img" />
 
                         <div className="contact-info">
-                            <p><strong>Email:</strong> <FontAwesomeIcon icon={faEnvelope} /> trentondobert@gmail.com</p>
-                            <p><strong>Phone:</strong> <FontAwesomeIcon icon={faPhone} /> (727)637-3649</p>
+                            <p><strong>Email:</strong> <FontAwesomeIcon icon={faEnvelope} /> <a href="mailto:trentondobert@gmail.com" className="contact-item">trentondobert@gmail.com</a></p>
+                            <p><strong>Phone:</strong> <FontAwesomeIcon icon={faPhone} /> <a href="tel:+17276373649" className="contact-item">(727) 637-3649</a></p>
                             <p><strong>GitHub:</strong> <FontAwesomeIcon icon={faGithub} />{' '} <a className="contact-item" href="https://github.com/trentondobert" target="_blank" rel="noopener noreferrer" target="_blank">github.com/trentondobert</a></p>
                             <p><strong>LinkedIn:</strong> <FontAwesomeIcon icon={faLinkedin} />{' '} <a className="contact-item" href="https://linkedin.com/in/trenton-dobert-5a53a3b8" target="_blank" rel="noopener noreferrer" target="_blank">linkedin.com/in/trenton-dobert-5a53a3b8</a></p>
                         </div>

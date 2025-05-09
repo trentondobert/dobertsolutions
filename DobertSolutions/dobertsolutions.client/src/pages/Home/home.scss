@@ -4,9 +4,9 @@
     display: flex;
     justify-content: space-between;
     align-items: stretch; 
-    gap: 2rem;
+    gap: 1rem;
     padding: 2rem 0;
-
+    font-family: vars.$font-primary;
     @media (max-width: 768px) {
         flex-direction: column;
         text-align: center;
@@ -20,6 +20,7 @@
     color: vars.$text-color;
     border-radius: 1rem;
     box-shadow: vars.$box-shadow-default;
+    font-family: vars.$font-primary;
 }
 
 .right-panel {
