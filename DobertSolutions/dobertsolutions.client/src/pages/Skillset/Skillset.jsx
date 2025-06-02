@@ -1,57 +1,102 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import PageWrapper from "../../components/PageWrapper/PageWrapper";
 import "./skillset.scss";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+    faJs, faReact, faVuejs, faHtml5, faCss3Alt, faSass, faBootstrap
+} from '@fortawesome/free-brands-svg-icons';
+import {
+    faCode, faServer, faDatabase, faCloud, faCircleQuestion, faLaptopCode
+} from '@fortawesome/free-solid-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import SkillCharts from "../../components/SkillCharts/SkillCharts";
 
 
+// Register icons globally
+library.add(
+    faJs, faReact, faVuejs, faHtml5, faCss3Alt, faSass, faBootstrap,
+    faCode, faServer, faDatabase, faCloud, faCircleQuestion, faLaptopCode
+);
 
 const Skillset = () => {
+    const [skills, setSkills] = useState([]);
+
+    useEffect(() => {
+        const getSkills = async () => {
+            try {
+                const response = await fetch("/api/skillset");
+                const data = await response.json();
+                setSkills(data);
+            } catch (error) {
+                console.error("Error fetching skills:", error);
+            }
+        };
+
+        getSkills();
+    }, []);
+
+    // Group skills by type
+    const frontendSkills = skills.filter(s => s.type === 1);
+    const backendSkills = skills.filter(s => s.type === 2);
+    const otherSkills = skills.filter(s => s.type === 3);
+
+    const renderSkillList = (skillGroup) => {
+        return (
+            <ul className="skill-list">
+                {skillGroup.map(skill => (
+                    <li key={skill.name} className="skill-card">
+                        <div className="card-inner">
+                            {/* Front Side */}
+                            <div className="card-front">
+                                <FontAwesomeIcon
+                                    icon={skill.iconVariable ? [skill.prefix, skill.iconVariable] : ['fas', 'circle-question']}
+                                    style={{ color: skill.iconColor }}
+                                    className="fa-icon"
+                                />
+                                <span>{skill.name}</span>
+                            </div>
+
+                            {/* Back Side */}
+                            <div className="card-back">
+                                <span>Confidence: {skill.score}/10</span>
+                            </div>
+                        </div>
+                    </li>
+                ))}
+            </ul>
+        );
+    };
+
     return (
-        <PageWrapper>       
-            <div>
-                <div className="skillset-container">
-                    <div className="top-row">
-                        <div className="left-box">
-                            <h2>Frontend Tech</h2>
-                            <ul className="skill-list">
-                                <li><FontAwesomeIcon icon={['fab', 'js']} className="icon-js fa-icon" /> JavaScript</li>
-                                <li><FontAwesomeIcon icon={['fab', 'react']} className="icon-react fa-icon" /> React</li>
-                                <li><FontAwesomeIcon icon={['fab', 'vuejs']} className="icon-vue fa-icon" /> Vue.js</li>
-                                <li><FontAwesomeIcon icon={['fab', 'html5']} className="icon-html fa-icon" /> HTML5</li>
-                                <li><FontAwesomeIcon icon={['fab', 'css3-alt']} className="icon-css fa-icon" /> CSS3</li>
-                                <li><FontAwesomeIcon icon={['fab', 'sass']} className="icon-sass fa-icon" /> SCSS</li>
-                                <li><FontAwesomeIcon icon={['fas', 'code']} className="icon-less fa-icon" /> LESS</li>
-                                <li><FontAwesomeIcon icon={['fab', 'bootstrap']} className="icon-bootstrap fa-icon" /> Bootstrap</li>
-                            </ul>
+        <PageWrapper>
+            <div className="skillset-container">
+                <h1 className="technical-header">Technical Skillset</h1>
+                <div className="top-row">
+                    <div className="left-box">
+                        <h2>Frontend Tech</h2>
+                        {renderSkillList(frontendSkills)}
 
-                            <h2>Backend Tech</h2>
-                            <ul className="skill-list">
-                                <li><FontAwesomeIcon icon={['fas', 'server']} className="icon-aspnet fa-icon" /> ASP.NET Core</li>
-                                <li><FontAwesomeIcon icon={['fas', 'code']} className="icon-csharp fa-icon" /> C#</li>
-                                <li><FontAwesomeIcon icon={['fas', 'database']} className="icon-ef fa-icon" /> Entity Framework</li>
-                                <li><FontAwesomeIcon icon={['fas', 'cloud']} className="icon-rest fa-icon" /> REST APIs</li>
-                                <li><FontAwesomeIcon icon={['fas', 'database']} className="icon-sql fa-icon" /> SQL Server</li>
-                            </ul>
-                        </div>
-
-                        <div className="right-box">
-                            <h2>Placeholder for future content</h2>
-                        </div>
+                        <h2>Backend Tech</h2>
+                        {renderSkillList(backendSkills)}
                     </div>
 
-                    <div className="bottom-row tools">
-                        <h2>Languages and Technology</h2>
-                        <ul>
-                            <li>MVC / MVVM</li>
-                            <li>Git, Postman, VS Code</li>
-                            <li>Clean Architecture</li>
-                        </ul>
+                    <div className="right-box">
+                        <SkillCharts
+                            frontendSkills={frontendSkills}
+                            backendSkills={backendSkills}
+                            otherSkills={otherSkills}
+                        />
                     </div>
+                </div>
+
+                <div className="bottom-row tools">
+                    <h2>Concepts and Technology</h2>
+                    {renderSkillList(otherSkills)}
                 </div>
             </div>
         </PageWrapper>
+    );
+};
 
-    )
-}
+export default Skillset;
 
-export default Skillset

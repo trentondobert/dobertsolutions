@@ -40,7 +40,7 @@
         gap: 1.5rem;
 
         .profile-img {
-            max-width: 500px;
+            max-width: 400px;
             border-radius: 50%;
             border: 3px solid vars.$accent-color;
             object-fit: cover;
@@ -89,4 +89,60 @@
             }
         }
     }
+
 }
+
+.gradyQuote {
+    padding-top: 0rem;
+
+
+}
+
+.dinoSection {
+    flex: 1;
+    display: flex;
+}
+
+.trex {
+    border: 4px solid vars.$primary-color; /* Change color/width as needed */
+    box-sizing: border-box; /* Ensures border is included within the image's dimensions */
+    display: block; /* Optional: removes extra space below inline images */
+    max-height: 600px;
+    max-width: 200px;
+}
+
+.what-i-do-container {
+    padding-left: 1rem;
+
+    .what-i-do-item {
+        margin-bottom: 1rem;
+        padding: 0.75rem;
+        background-color: vars.$primary-color;
+        border-radius: 8px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+
+        .title {
+            font-weight: 600;
+        }
+
+        .description {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        &:hover {
+
+            .description {
+                max-height: 200px;
+                opacity: 1;
+                margin-top: 0.5rem;
+            }
+        }
+    }
+}
+

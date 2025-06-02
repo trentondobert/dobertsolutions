@@ -11,20 +11,40 @@ const Home = () => {
             <div className="home-container">
                 <div className="left-panel">
                     <h1>Welcome!</h1>
-                    <p> It's a pleasure to meet you, I'm Trenton Dobert, an experienced ASP.NET Full Stack Developer
+                    <p> It's a pleasure to meet you, I'm Trenton Dobert, an experienced ASP.NET Full Stack Web Developer
                         with 7 years of experience in developing scalable, efficient,
-                        and robust web applications. Specializing in React, Vue.js,
-                        C# backend development, SQL databases, and architecture patterns
-                        like MVVM and MVC, I develop with modern technologies to deliver
-                        high-performance software solutions tailored to your business and
-                        individual needs. Whether it's building custom applications,
-                        optimizing backend processes, or designing intuitive front-end interfaces,
-                        I bring the expertise needed to turn your project vision into reality.
+                        and robust web applications.
                     </p>
+                    <p className="gradyQuote"> <i>The function of good software is to make the complex appear to be simple. - </i><a href="https://en.wikipedia.org/wiki/Grady_Booch" className="contact-item">Grady Booch</a></p>
+                    <div class="whatIDo">
+                        <div className="what-i-do-container">
+                            <h3>What I do:</h3>
+                            <div className="what-i-do-item">
+                                <div className="title">Design, Develop and Maintain Software</div>
+                                <div className="description">I build scalable, maintainable fullstack applications with clean architecture and modern tooling.</div>
+                            </div>
+
+                            <div className="what-i-do-item">
+                                <div className="title">Web API Development</div>
+                                <div className="description">I create secure, RESTful APIs using ASP.NET Core with full CRUD operations and token-based auth.</div>
+                            </div>
+
+                            <div className="what-i-do-item">
+                                <div className="title">Train and Engineer AI Neural Networks</div>
+                                <div className="description">I experiment with neural networks using frameworks like TensorFlow and integrate them into custom solutions.</div>
+                            </div>
+
+                            <div className="what-i-do-item">
+                                <div className="title">Create Technical Documentation</div>
+                                <div className="description">I write clear, developer-friendly documentation for APIs, systems, and architecture decisions.</div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
                 <div className="right-panel">
                     <div className="profile-wrapper">
-                        <img src="/assets/TrentonDobertPic.jpg" alt="Trenton Picture" className="profile-img" />
+                        <img src="/assets/profilepic.jpg" alt="Trenton Picture" className="profile-img" />
 
                         <div className="contact-info">
                             <p><strong>Email:</strong> <FontAwesomeIcon icon={faEnvelope} /> <a href="mailto:trentondobert@gmail.com" className="contact-item">trentondobert@gmail.com</a></p>
@@ -38,7 +58,7 @@ const Home = () => {
             </div>
 
             <div className="home-bottom">
-                {/* Full-width section for future content*/}
+                
             </div>
         </PageWrapper>
     );
