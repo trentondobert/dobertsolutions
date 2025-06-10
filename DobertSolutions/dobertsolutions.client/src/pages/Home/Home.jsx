@@ -18,7 +18,7 @@ const Home = () => {
                     <p className="gradyQuote"> <i>The function of good software is to make the complex appear to be simple. - </i><a href="https://en.wikipedia.org/wiki/Grady_Booch" className="contact-item">Grady Booch</a></p>
                     <div class="whatIDo">
                         <div className="what-i-do-container">
-                            <h3>What I do:</h3>
+                            <h3>What I do (hover):</h3>
                             <div className="what-i-do-item">
                                 <div className="title">Design, Develop and Maintain Software</div>
                                 <div className="description">I build scalable, maintainable fullstack applications with clean architecture and modern tooling.</div>

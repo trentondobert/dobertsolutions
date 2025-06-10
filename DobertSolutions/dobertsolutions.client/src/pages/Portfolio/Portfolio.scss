@@ -1,0 +1,78 @@
+@use '../../styles/variables' as vars;
+
+.portfolio-container {
+    padding: 1rem;
+
+    .portfolio-header {
+        font-size: 3rem;
+        font-weight: bold;
+        color: white;
+        text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.9);
+        margin-bottom: 2rem;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .project-card {
+        background-color: vars.$secondary-color;
+        border-radius: 1rem;
+        padding: 1rem;
+        color: white;
+        display: flex;
+        flex-direction: column;
+
+        .project-image {
+            width: 100%;
+            max-width: 100%;
+            max-height: 300px;
+            min-height: 120px;
+            object-fit: contain;
+            object-position: center;
+            border-radius: 0.75rem;
+            margin-bottom: 1rem;
+            background-color: vars.$secondary-color;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .description {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+
+            .tech-item {
+                background-color: vars.$primary-color;
+                padding: 0.3rem 0.6rem;
+                border-radius: 0.5rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+
+            a {
+                color: white;
+                text-decoration: underline;
+
+                &:hover {
+                    color: vars.$accent-color;
+                }
+            }
+        }
+    }
+}

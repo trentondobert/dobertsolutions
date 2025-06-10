@@ -7,7 +7,7 @@
 
     .top-row {
         display: flex;
-        gap: 2rem;
+        gap: 1rem;
         flex-wrap: wrap;
 
         .left-box {
@@ -17,6 +17,8 @@
             flex-direction: column;
             background-color: vars.$secondary-color;
             margin-bottom: 0rem;
+            border-radius: 1rem;
+
 
             h2 {
                 font-size: 1.5rem;
@@ -29,7 +31,7 @@
             flex: 1;
             background-color: vars.$secondary-color;
             padding: 1rem;
-            border-radius: 0.5rem;
+            border-radius: 1rem;
             min-width: 280px;
             margin-bottom: 0rem;
 
@@ -110,7 +112,6 @@
             }
         }
     }
-
 }
 .technical-header {
     font-size: 3rem;
@@ -125,7 +126,7 @@
 
 .skill-chart-container {
     margin-top: 2rem;
-
+    
     .chart-buttons {
         display: flex;
         justify-content: center;
