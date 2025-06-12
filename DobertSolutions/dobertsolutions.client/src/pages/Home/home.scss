@@ -52,7 +52,7 @@
             color: vars.$text-color;
 
             a {
-                color: vars.$accent-color;
+                color: #6E92A1;
                 text-decoration: none;
 
                 &:hover {
@@ -79,7 +79,7 @@
             }
 
             &:hover {
-                color: vars.$primary-color;
+                color: #666CF6;
 
                 svg {
                     color: vars.$primary-color;
@@ -89,7 +89,6 @@
             }
         }
     }
-
 }
 
 .gradyQuote {
@@ -98,18 +97,6 @@
 
 }
 
-.dinoSection {
-    flex: 1;
-    display: flex;
-}
-
-.trex {
-    border: 4px solid vars.$primary-color; /* Change color/width as needed */
-    box-sizing: border-box; /* Ensures border is included within the image's dimensions */
-    display: block; /* Optional: removes extra space below inline images */
-    max-height: 600px;
-    max-width: 200px;
-}
 
 .what-i-do-container {
     padding-left: 1rem;

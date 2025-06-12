@@ -30,7 +30,8 @@
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 
-    &:hover {
+    &:hover,
+    &.active {
         background-color: vars.$accent-color;
         color: vars.$primary-color;
         border-radius: 4px;
