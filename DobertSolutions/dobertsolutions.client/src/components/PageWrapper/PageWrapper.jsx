@@ -9,9 +9,6 @@ const PageWrapper = ({ children }) => {
             <main className="page-content">
                 {children}
             </main>
-            <footer className="page-footer">
-                &copy; {new Date().getFullYear()} Dobert Solutions. All rights reserved.
-            </footer>
         </div>
     );
 };

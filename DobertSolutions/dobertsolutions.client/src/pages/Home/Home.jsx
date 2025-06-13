@@ -16,7 +16,7 @@ const Home = () => {
                         and robust web applications.
                     </p>
                     <p className="gradyQuote"> <i>The function of good software is to make the complex appear to be simple. - </i><a href="https://en.wikipedia.org/wiki/Grady_Booch" className="contact-item">Grady Booch</a></p>
-                    <div class="whatIDo">
+                    <div className="whatIDo">
                         <div className="what-i-do-container">
                             <h3>What I do (hover):</h3>
                             <div className="what-i-do-item">

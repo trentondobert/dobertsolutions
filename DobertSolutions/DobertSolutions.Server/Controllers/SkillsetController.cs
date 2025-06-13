@@ -20,7 +20,7 @@ namespace DobertSolutions.Server.Controllers
                 new Skill { Name = "Sass", Score = 8, IconVariable = "sass", IconColor = "#cf649a", Prefix = "fab", Type = 1},
                 new Skill { Name = "Bootstrap", Score = 8, IconVariable = "bootstrap", IconColor = "#7952b3", Prefix = "fab" , Type = 1},
                 new Skill { Name = "Less", Score = 6, IconVariable = "code", IconColor = "#f7df1e", Prefix = "fas", Type = 1},
-                new Skill { Name = "ASP.NET", Score = 8, IconVariable = "server", IconColor = "#512bd4", Prefix = "fas", Type = 2},
+                new Skill { Name = "ASP.NET", Score = 9, IconVariable = "server", IconColor = "#512bd4", Prefix = "fas", Type = 2},
                 new Skill { Name = "C#", Score = 10, IconVariable = "laptop-code", IconColor = "#178600", Prefix = "fas", Type = 2},
                 new Skill { Name = "Entity Framework", Score = 7, IconVariable = "server", IconColor = "#00758f", Prefix = "fas", Type = 2},
                 new Skill { Name = "REST APIs", Score = 10, IconVariable = "cloud", IconColor = "#6366f1", Prefix = "fas", Type = 2},

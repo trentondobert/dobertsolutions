@@ -9,3 +9,11 @@ th, td {
     padding-left: 1rem;
     padding-right: 1rem;
 }
+
+#footer {
+    background-color: red;
+}
+
+.site-footer {
+    background-color: red;
+}

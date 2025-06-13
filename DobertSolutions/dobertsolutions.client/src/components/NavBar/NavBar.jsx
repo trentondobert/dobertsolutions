@@ -1,29 +1,42 @@
-import React from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import './navbar.scss'
+import React, { useEffect, useState } from 'react';
+import './navbar.scss';
 
 const NavBar = () => {
-    const location = useLocation();
-    const currentPath = location.pathname;
+    const [activeSection, setActiveSection] = useState('home');
+
+    useEffect(() => {
+        const sectionIds = ['home', 'skillset', 'portfolio', 'contact'];
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                const visible = entries.find(entry => entry.isIntersecting);
+                if (visible) {
+                    setActiveSection(visible.target.id);
+                }
+            },
+            { threshold: 0.6 } // adjust sensitivity
+        );
+
+        sectionIds.forEach(id => {
+            const section = document.getElementById(id);
+            if (section) observer.observe(section);
+        });
+
+        return () => observer.disconnect();
+    }, []);
+
+    const isActive = (id) => activeSection === id ? 'active' : '';
 
     return (
         <nav className="navbar">
             <div className="nav-container">
-                <Link to="/">
-                    <button className={`nav-button ${currentPath === '/' ? 'active' : ''}`}>Home</button>
-                </Link>
-                <Link to="/skillset">
-                    <button className={`nav-button ${currentPath === '/skillset' ? 'active' : ''}`}>SkillSet</button>
-                </Link>
-                <Link to="/portfolio">
-                    <button className={`nav-button ${currentPath === '/portfolio' ? 'active' : ''}`}>Portfolio</button>
-                </Link>
-                <Link to="/contact">
-                    <button className={`nav-button ${currentPath === '/contact' ? 'active' : ''}`}>Contact</button>
-                </Link>
+                <a href="#home" className={`nav-button ${isActive('home')}`}>Home</a>
+                <a href="#skillset" className={`nav-button ${isActive('skillset')}`}>SkillSet</a>
+                <a href="#portfolio" className={`nav-button ${isActive('portfolio')}`}>Portfolio</a>
+                <a href="#contact" className={`nav-button ${isActive('contact')}`}>Contact</a>
             </div>
         </nav>
-    )
-}
+    );
+};
 
 export default NavBar;
