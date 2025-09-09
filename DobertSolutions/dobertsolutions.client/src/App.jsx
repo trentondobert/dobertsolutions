@@ -20,7 +20,7 @@ function App() {
                     <Home />
                 </section>
                 <section id="skillset">
-                    <SkillSet />
+                    <Skillset />
                 </section>
                 <section id="portfolio">
                     <Portfolio />
