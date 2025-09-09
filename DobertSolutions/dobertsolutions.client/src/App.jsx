@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBar from './components/NavBar/NavBar';
 import Home from './pages/Home/Home';
-import SkillSet from './pages/SkillSet/SkillSet';
+import Skillset from './pages/SkillSet/SkillSet';
 import Portfolio from './pages/Portfolio/Portfolio';
 import Contact from './pages/Contact/Contact';
 
