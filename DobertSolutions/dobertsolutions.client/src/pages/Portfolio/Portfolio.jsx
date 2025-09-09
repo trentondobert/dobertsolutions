@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PageWrapper from '../../components/PageWrapper/PageWrapper';
-import './portfolio.scss';
+import './Portfolio.scss';
 
 const Portfolio = () => {
     const [projects, setProjects] = useState([]);
