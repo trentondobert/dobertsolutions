@@ -3,7 +3,7 @@ import PageWrapper from '../../components/PageWrapper/PageWrapper';
 import './Portfolio.scss';
 
 const Portfolio = () => {
-    const [projects, setProjects] = useState([]);
+    /*const [projects, setProjects] = useState([]);
 
     useEffect(() => {
         const fetchProjects = async () => {
@@ -17,7 +17,34 @@ const Portfolio = () => {
         };
 
         fetchProjects();
-    }, []);
+    }, []);*/
+        const projects = [
+        {
+            name: "Dobert Solutions",
+            imageUrl: "/assets/projects/dobert-solutions.png",
+            description: "A fullstack React + ASP.NET Core web app for showcasing skills and projects.",
+            techStack: ["React", "ASP.NET Core", "SCSS", "Azure SQL", "MVC"],
+            githubUrl: "https://github.com/trentondobert/dobertsolutions.git",
+            liveDemoUrl: "https://dobertsolutions.com"
+        },
+        {
+            name: "Kerry the Card Counter",
+            imageUrl: "/assets/projects/kerry.png",
+            description: "A Tensorflow Neural Network designed to learn how to Count Cards in Blackjack.",
+            techStack: ["Python", "TensorFlow.js"],
+            githubUrl: "https://github.com/trentondobert/KerryCardCounter",
+            liveDemoUrl: ""
+        },
+        {
+            name: "Seamless Gutters",
+            imageUrl: "/assets/projects/Seamless-Gutters.png",
+            description: "Marketing site for a Florida gutter cleaning business.",
+            techStack: ["React", "Node.js", "MVC"],
+            githubUrl: "https://github.com/trentondobert/SeamlessGutters",
+            liveDemoUrl: ""
+        }
+    ];
+
 
     return (
         <PageWrapper>
